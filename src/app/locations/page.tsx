@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { site } from "@/content/site";
 import { buildPageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
@@ -16,12 +17,39 @@ export default function LocationsPage() {
   return (
     <div className="py-12">
       <Container>
-        <h1 className="text-3xl font-semibold tracking-tight text-gray-900">
-          Locations we serve
-        </h1>
-        <p className="mt-3 max-w-2xl text-gray-600">
-          We focus on commercial storefront, windows, and doors & hardware.
-        </p>
+        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2">
+          <div>
+            <h1 className="text-3xl font-semibold tracking-tight text-gray-900">
+              Locations we serve
+            </h1>
+            <p className="mt-3 max-w-2xl text-gray-600">
+              Commercial service coverage for storefront systems, window glass,
+              and doors & hardware. If you manage multiple sites, we’ll help you
+              standardize repairs and scheduling across locations.
+            </p>
+
+            <div className="mt-6 rounded-lg border border-black/5 bg-white p-5">
+              <div className="text-sm font-semibold text-gray-900">
+                Service areas
+              </div>
+              <p className="mt-2 text-sm text-gray-600">
+                Serving {site.serviceAreas.join(", ")}. Ask about availability
+                for nearby commercial corridors.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-black/5 bg-white">
+            <Image
+              src="/images/storefront.jpeg"
+              alt="Commercial storefront service area coverage"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {site.locations.map((l) => (

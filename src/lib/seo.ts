@@ -5,6 +5,7 @@ import { getSiteUrl } from "@/lib/siteUrl";
 
 export function buildRootMetadata(): Metadata {
   const url = getSiteUrl();
+  const ogImage = new URL("/images/storefront.jpeg", url);
 
   return {
     metadataBase: url,
@@ -22,11 +23,20 @@ export function buildRootMetadata(): Metadata {
       url,
       title: site.seo.defaultTitle,
       description: site.seo.defaultDescription,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Commercial storefront glass and doors",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: site.seo.defaultTitle,
       description: site.seo.defaultDescription,
+      images: [ogImage.toString()],
     },
   };
 }
@@ -39,6 +49,7 @@ export function buildPageMetadata(params: {
 }): Metadata {
   const url = getSiteUrl();
   const canonical = params.path ? new URL(params.path, url) : url;
+  const ogImage = new URL("/images/storefront.jpeg", url);
 
   return {
     title: params.title,
@@ -56,11 +67,20 @@ export function buildPageMetadata(params: {
       url: canonical,
       title: params.title,
       description: params.description ?? site.seo.defaultDescription,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Commercial storefront glass and doors",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: params.title,
       description: params.description ?? site.seo.defaultDescription,
+      images: [ogImage.toString()],
     },
   };
 }

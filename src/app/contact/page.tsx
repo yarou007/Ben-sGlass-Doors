@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { site } from "@/content/site";
 import { buildPageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
@@ -17,13 +18,34 @@ export default function ContactPage() {
   return (
     <div className="py-12">
       <Container>
-        <h1 className="text-3xl font-semibold tracking-tight text-gray-900">
-          Contact
-        </h1>
-        <p className="mt-3 max-w-2xl text-gray-600">
-          Fast response for commercial storefront, window glass, and doors &
-          hardware.
-        </p>
+        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2">
+          <div>
+            <h1 className="text-3xl font-semibold tracking-tight text-gray-900">
+              Contact
+            </h1>
+            <p className="mt-3 max-w-2xl text-gray-600">
+              Call for scheduling, on-site assessments, and commercial service
+              availability. We work with property managers, retail operators,
+              and facility teams.
+            </p>
+            <p className="mt-3 max-w-2xl text-sm text-gray-600">
+              For the fastest turnaround, share: location, photos, door/window
+              type, and any urgency (board-up, security concerns, or business
+              hours).
+            </p>
+          </div>
+
+          <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-black/5 bg-white">
+            <Image
+              src="/images/door-hardware.jpeg"
+              alt="Commercial door and hardware service"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
 
         <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
           <div className="rounded-lg border border-black/5 bg-white p-6">

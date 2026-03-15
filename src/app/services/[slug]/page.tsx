@@ -45,6 +45,36 @@ export default function ServiceDetailPage({
             </h1>
             <p className="mt-4 text-gray-600">{service.description}</p>
 
+            <div className="mt-6 rounded-lg border border-black/5 bg-white p-6">
+              <h2 className="text-sm font-semibold text-gray-900">
+                Typical work requests
+              </h2>
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-gray-700">
+                <li>Broken or cracked glass replacement</li>
+                <li>Door alignment, closers, and panic hardware</li>
+                <li>Operational adjustments for smooth open/close</li>
+                <li>Replace worn seals, handles, or damaged components</li>
+              </ul>
+              <p className="mt-4 text-sm text-gray-600">
+                Need help identifying what you have? Send photos via the contact
+                page and we’ll guide the next step.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Link
+                  className="inline-flex items-center justify-center rounded-md border border-black/10 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black/5"
+                  href="/locations"
+                >
+                  Check coverage
+                </Link>
+                <Link
+                  className="inline-flex items-center justify-center rounded-md border border-black/10 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black/5"
+                  href="/contact"
+                >
+                  Request service
+                </Link>
+              </div>
+            </div>
+
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
