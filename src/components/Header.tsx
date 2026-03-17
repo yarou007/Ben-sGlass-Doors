@@ -47,15 +47,30 @@ export function Header() {
             Locations
           </Link>
           <Link className="hover:text-gray-900" href="/contact">
-            Contact
+            Get Free Estimate
           </Link>
         </nav>
 
+        <div className="hidden items-center gap-2 sm:flex">
+          <Link
+            className="inline-flex items-center justify-center rounded-md border border-black/10 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black/5"
+            href="/contact"
+          >
+            Free estimate
+          </Link>
+          <a
+            className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+            href={`tel:${formatPhoneTel()}`}
+          >
+            Call {site.contact.phone}
+          </a>
+        </div>
+
         <a
-          className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+          className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 sm:hidden"
           href={`tel:${formatPhoneTel()}`}
         >
-          Call {site.contact.phone}
+          Call
         </a>
       </div>
 
@@ -76,8 +91,11 @@ export function Header() {
               Locations
             </Link>
             <Link className="hover:text-gray-900" href="/contact" onClick={() => setIsOpen(false)}>
-              Contact
+              Get Free Estimate
             </Link>
+            <a className="font-medium text-gray-900" href={`tel:${formatPhoneTel()}`}>
+              Call now: {site.contact.phone}
+            </a>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { site } from "@/content/site";
 import { buildPageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
@@ -8,7 +9,7 @@ import { LocationCard } from "@/components/LocationCard";
 export const metadata: Metadata = buildPageMetadata({
   title: "Locations",
   description:
-    "We serve commercial properties across DC, NY, Washington Metro, and Philadelphia. Call 703-244-0559.",
+    "We serve commercial properties across Washington DC, New York, Virginia, and Philadelphia. Call 703-244-0559.",
   path: "/locations",
   keywords: ["commercial glass near me", "storefront repair near me"],
 });
@@ -23,9 +24,9 @@ export default function LocationsPage() {
               Locations we serve
             </h1>
             <p className="mt-3 max-w-2xl text-gray-600">
-              Commercial service coverage for storefront systems, window glass,
-              and doors & hardware. If you manage multiple sites, we’ll help you
-              standardize repairs and scheduling across locations.
+              Commercial service coverage for storefront glass repair, emergency
+              board-up, and doors & hardware. If you manage multiple sites,
+              we’ll help you standardize repairs and scheduling across locations.
             </p>
 
             <div className="mt-6 rounded-lg border border-black/5 bg-white p-5">
@@ -36,6 +37,20 @@ export default function LocationsPage() {
                 Serving {site.serviceAreas.join(", ")}. Ask about availability
                 for nearby commercial corridors.
               </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Link
+                  className="inline-flex items-center justify-center rounded-md border border-black/10 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black/5"
+                  href="/service-areas"
+                >
+                  Neighborhood pages
+                </Link>
+                <Link
+                  className="inline-flex items-center justify-center rounded-md border border-black/10 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black/5"
+                  href="/blog"
+                >
+                  Guides
+                </Link>
+              </div>
             </div>
           </div>
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/content/site";
+import { formatPhoneTel } from "@/lib/siteUrl";
 
 export function Footer() {
   return (
@@ -8,7 +9,12 @@ export function Footer() {
         <div>
           <div className="font-semibold text-gray-900">{site.brand.name}</div>
           <p className="mt-2 text-sm text-gray-600">{site.brand.tagline}</p>
-          <p className="mt-4 text-sm text-gray-600">Phone: {site.contact.phone}</p>
+          <p className="mt-4 text-sm text-gray-600">
+            Phone:{" "}
+            <a className="font-medium text-gray-900" href={`tel:${formatPhoneTel()}`}>
+              {site.contact.phone}
+            </a>
+          </p>
         </div>
 
         <div>
@@ -19,6 +25,12 @@ export function Footer() {
             </Link>
             <Link className="hover:text-gray-900" href="/locations">
               Locations
+            </Link>
+            <Link className="hover:text-gray-900" href="/service-areas">
+              Service areas
+            </Link>
+            <Link className="hover:text-gray-900" href="/blog">
+              Blog
             </Link>
             <Link className="hover:text-gray-900" href="/contact">
               Contact
